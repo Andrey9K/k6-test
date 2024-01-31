@@ -59,7 +59,7 @@ export default function () {
 
     const query = `{
     getProductListing (
-      filter: "{\\"code1C\\": \\"${randomString}\\"}"
+      filter: "{\\"guid1C\\": \\"${randomString}\\"}"
     ) 
     {
       edges {

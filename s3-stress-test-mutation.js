@@ -63,6 +63,61 @@ export default function () {
     input: {
       name: "stress_test_${randomString}"
       guid1C: "${randomString}"
+      code1C: "${randomString}"
+      codeWMS: "${randomString}"
+      codeSupplier: "${randomString}"
+      codeManufacturer: "${randomString}"
+      status: "Новинка"
+      categoryAccounting: "Наборы"
+      direction:
+        {id: 22275, type: "object"}
+      subject:
+        {id: 22275, type: "object"}
+      brand:
+        {id: 22275, type: "object"}
+      series:
+        {id: 22275, type: "object"}      
+      article: "${randomString}"
+      mainCharacteristics: "${randomString}"
+      comment: "${randomString}"
+      productName: "${randomString}"
+      directAnalogue:[
+        {id: 104, type: "object"},
+        {id: 177139, type: "object"}
+      ]
+      WB: "${randomString}"
+      productName1: "${randomString}"
+      ozone: "${randomString}"
+      productName2: "${randomString}"
+      sitesGeneral: "${randomString}"      
+      catalogView:
+        {id: 106, type: "object"}
+      WEBName: "${randomString}"
+      marketingPropertiesValues:[
+        {id: 743233, type: "object"},
+        {id: 743245, type: "object"}
+      ]
+      picture: "${randomString}"
+      video: "${randomString}"
+      etimClass:
+        {id: 163646, type: "object"}
+      raecID: "${randomString}"
+      units:[
+        {id: 3967449, type: "object"},
+        {id: 3967461, type: "object"}
+      ]
+      minimumIndivisibleMultiplicity: 123
+      minimumMultiplicitySales: 124 
+      DateMeasurement: "0001-01-01T00:00:00"
+      importer:
+        {id: 22140, type: "object"}
+      russian: "${randomString}"
+      kazakh: "${randomString}"
+      armenian: "${randomString}"
+      uzbek: "${randomString}"
+      moldavian: "${randomString}"
+      kyrgyz: "${randomString}"
+      countryOrigin: "${randomString}"
     }
   ) {
     success message

@@ -127,8 +127,8 @@ export default function () {
         const hasEdgesKey = !!json.data.getProductListing;
         if (!hasEdgesKey) {
             const fail_response = true;
-            console.log(hasEdgesKey);
-            console.log(response.json())
+            // console.log(hasEdgesKey);
+            // console.log(response.json())
             _fail_response.add(fail_response);
         } else {
             const fail_response = false;
@@ -137,7 +137,7 @@ export default function () {
 
     } catch (error) {
         // JSON не корректен
-        console.error('JSON не корректен');
+        // console.error('JSON не корректен');
         const fail_response = true;
         _fail_response.add(fail_response);
     }

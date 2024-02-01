@@ -3,5 +3,6 @@
 /csv
 /node_modules
 /html
+/old
 package-lock.json
 package.json

@@ -1,3 +1,7 @@
 /.idea
 /json
 /csv
+/node_modules
+/html
+package-lock.json
+package.json

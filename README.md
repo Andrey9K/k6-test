@@ -11,27 +11,33 @@
 
 Запуск осуществляется через терминал.
 #### Запуск скрипта на чтение
-
+    Подробнее настройки можно посмотреть https://k6.io/docs/get-started/results-output/
 ####
-    k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
+    Для обычного запуска
+    k6 run ./s3-stress-test-query.js
+    Для запуска с доп. настройками (потребуется убрать summaryTrendStats из скрипта)
+    k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js    
 #### Запуск скрипта на запись
 #### 
+    Для обычного запуска
+    k6 run ./s3-stress-test-mutation.js
+    Для запуска с доп. настройками (потребуется убрать summaryTrendStats из скрипта)
     k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
 
 ### Детальная выгрузка по каждой итерации
 
 #### Выгрузка csv фала на чтение
     
-    k6 run --out csv=./csv/detail-test-results.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
+    k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
 
 #### Выгрузка json фала на чтение
     
-    k6 run --out json=./json/detail-test-results.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
+    k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
 
 #### Выгрузка csv фала на запись
     
-    k6 run --out csv=./csv/detail-test-results.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
+    k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
 
 #### Выгрузка json фала на запись
     
-    k6 run --out json=./json/detail-test-results.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
+    k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js

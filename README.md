@@ -33,7 +33,7 @@
 ###Например
 #### Для полной выгрузки на чтение
     
-    k6 run --out csv=./csv/detail-test-result.csv --out json=./json/detail-test-result.json ./s3-stress-test-mutation.js
+    k6 run --out csv=./csv/detail-test-result.csv --out json=./json/detail-test-result.json ./s3-stress-test-query.js
 
 #### Для полной выгрузки на запись
     

@@ -188,7 +188,7 @@ export function handleSummary(data) {
     const now = new Date();
     const formattedDate = `${now.getDate()}-${now.getMonth() + 1}-${now.getFullYear()}`;
     const formattedTime = `${now.getHours()}-${now.getMinutes()}-${now.getSeconds()}`;
-    const json = `./json/summary_${formattedDate}-${formattedTime}.json`;
+    const json = `./json/result_${formattedDate}-${formattedTime}.json`;
     const html = `./html/result_${formattedDate}-${formattedTime}.html`;
     return {
         'stdout': textSummary(data, { indent: ' ', enableColors: true }),

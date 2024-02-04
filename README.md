@@ -5,39 +5,36 @@
 
 ## Установка k6
     sudo snap install k6
-
+### Установка доп. выгрузки html
+    npm install k6-html-reporter --save-dev
+Выгрузка html  не поддерживает p(99).
 ## Запуск тестов
 Перед запуском добавьте apiKey и apiURL в скрипты (s3-stress-test-query.js , s3-stress-test-mutation.js)
 
-Запуск осуществляется через терминал.
+Запуск осуществляется через терминал (терминал должен находиться в дериктории проекта).
+    Подробнее настройки можно посмотреть в <a href="https://k6.io/docs/get-started/results-output/">документации</a>
 #### Запуск скрипта на чтение
-    Подробнее настройки можно посмотреть https://k6.io/docs/get-started/results-output/
-####
-    Для обычного запуска
-    k6 run ./s3-stress-test-query.js
-    Для запуска с доп. настройками (потребуется убрать summaryTrendStats из скрипта)
-    k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js    
+
+    k6 run ./s3-stress-test-query.js 
+           
 #### Запуск скрипта на запись
-#### 
-    Для обычного запуска
+    
     k6 run ./s3-stress-test-mutation.js
-    Для запуска с доп. настройками (потребуется убрать summaryTrendStats из скрипта)
-    k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
 
 ### Детальная выгрузка по каждой итерации
-
-#### Выгрузка csv фала на чтение
+Для более детальной выгрузки по каждой итерации в исходную каменду для запуска необходимо добавить:
+#### Для CSV
     
-    k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
+    --out csv=./csv/detail-test-result.csv
 
-#### Выгрузка json фала на чтение
+#### Для Json 
     
-    k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
+    --out json=./json/detail-test-result.json 
+###Например
+#### Для полной выгрузки на чтение
+    
+    k6 run --out csv=./csv/detail-test-result.csv --out json=./json/detail-test-result.json ./s3-stress-test-mutation.js
 
-#### Выгрузка csv фала на запись
+#### Для полной выгрузки на запись
     
-    k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
-
-#### Выгрузка json фала на запись
-    
-    k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
+    k6 run --out csv=./csv/detail-test-result.csv --out json=./json/detail-test-result.json ./s3-stress-test-mutation.js

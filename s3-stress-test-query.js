@@ -25,58 +25,58 @@ export const options = {
         ]
     },
     stages: [
-        // {duration: '5m', target: 5},
-        // {duration: '5m', target: 10},
-        // {duration: '5m', target: 15},
-        // {duration: '5m', target: 20},
-        // {duration: '5m', target: 25},
-        // {duration: '5m', target: 30},
-        // {duration: '5m', target: 35},
-        // {duration: '5m', target: 40},
-        // {duration: '5m', target: 45},
-        // {duration: '5m', target: 50},
-        // {duration: '5m', target: 55},
-        // {duration: '5m', target: 60},
-        // {duration: '5m', target: 65},
-        // {duration: '5m', target: 70},
-        // {duration: '5m', target: 75},
-        // {duration: '5m', target: 80},
-        // {duration: '5m', target: 85},
-        // {duration: '5m', target: 90},
-        // {duration: '5m', target: 95},
-        // {duration: '5m', target: 100},
-        // {duration: '5m', target: 105},
-        // {duration: '5m', target: 110},
-        // {duration: '5m', target: 115},
-        // {duration: '5m', target: 120},
-        // {duration: '5m', target: 125},
-        // {duration: '5m', target: 130},
-        // {duration: '5m', target: 135},
-        // {duration: '5m', target: 140},
-        // {duration: '5m', target: 145},
-        // {duration: '5m', target: 150},
-        // {duration: '5m', target: 155},
-        // {duration: '5m', target: 160},
-        // {duration: '5m', target: 165},
-        // {duration: '5m', target: 170},
-        // {duration: '5m', target: 175},
-        // {duration: '5m', target: 180},
-        // {duration: '5m', target: 185},
-        // {duration: '5m', target: 190},
-        // {duration: '5m', target: 195},
-        // {duration: '5m', target: 200},
-        // {duration: '5m', target: 205},
-        // {duration: '5m', target: 210},
-        // {duration: '5m', target: 215},
-        // {duration: '5m', target: 220},
-        // {duration: '5m', target: 225},
-        // {duration: '5m', target: 230},
-        // {duration: '5m', target: 240},
-        // {duration: '5m', target: 245},
-        // {duration: '5m', target: 250},
-        // {duration: '5m', target: 255},
-        // {duration: '5m', target: 260},
-        // {duration: '5m', target: 265},
+        {duration: '5m', target: 5},
+        {duration: '5m', target: 10},
+        {duration: '5m', target: 15},
+        {duration: '5m', target: 20},
+        {duration: '5m', target: 25},
+        {duration: '5m', target: 30},
+        {duration: '5m', target: 35},
+        {duration: '5m', target: 40},
+        {duration: '5m', target: 45},
+        {duration: '5m', target: 50},
+        {duration: '5m', target: 55},
+        {duration: '5m', target: 60},
+        {duration: '5m', target: 65},
+        {duration: '5m', target: 70},
+        {duration: '5m', target: 75},
+        {duration: '5m', target: 80},
+        {duration: '5m', target: 85},
+        {duration: '5m', target: 90},
+        {duration: '5m', target: 95},
+        {duration: '5m', target: 100},
+        {duration: '5m', target: 105},
+        {duration: '5m', target: 110},
+        {duration: '5m', target: 115},
+        {duration: '5m', target: 120},
+        {duration: '5m', target: 125},
+        {duration: '5m', target: 130},
+        {duration: '5m', target: 135},
+        {duration: '5m', target: 140},
+        {duration: '5m', target: 145},
+        {duration: '5m', target: 150},
+        {duration: '5m', target: 155},
+        {duration: '5m', target: 160},
+        {duration: '5m', target: 165},
+        {duration: '5m', target: 170},
+        {duration: '5m', target: 175},
+        {duration: '5m', target: 180},
+        {duration: '5m', target: 185},
+        {duration: '5m', target: 190},
+        {duration: '5m', target: 195},
+        {duration: '5m', target: 200},
+        {duration: '5m', target: 205},
+        {duration: '5m', target: 210},
+        {duration: '5m', target: 215},
+        {duration: '5m', target: 220},
+        {duration: '5m', target: 225},
+        {duration: '5m', target: 230},
+        {duration: '5m', target: 240},
+        {duration: '5m', target: 245},
+        {duration: '5m', target: 250},
+        {duration: '5m', target: 255},
+        {duration: '5m', target: 260},
+        {duration: '5m', target: 265},
         {duration: '5m', target: 270},
         {duration: '5m', target: 275}
     ]
@@ -127,9 +127,6 @@ export default function () {
             failResponse.add(false)
         }
     } else {
-        console.log(`Пользователь${__VU}`);
-        console.log(`Итерация${__ITER}`);
-        console.log(`Статус${response.status}`);
         failResponse.add(true)
     }
 }
@@ -145,12 +142,3 @@ export function handleSummary(data) {
         [html]: htmlReport(data)
     }
 }
-//Установка k6
-// sudo snap install k6
-// npm install k6-html-reporter --save-dev
-// Запуск тестов
-// k6 run ./s3-stress-test-query.js
-// k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
-//Запуск теста с более детальной выгрузкой по каждой итерации
-// k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js
-// k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-query.js

@@ -25,25 +25,25 @@ export const options = {
         ]
     },
     stages: [
-        // {duration: '5m', target: 5},
-        // {duration: '5m', target: 10},
-        // {duration: '5m', target: 15},
-        // {duration: '5m', target: 20},
-        // {duration: '5m', target: 25},
-        // {duration: '5m', target: 30},
-        // {duration: '5m', target: 35},
-        // {duration: '5m', target: 40},
-        // {duration: '5m', target: 45},
-        // {duration: '5m', target: 50},
-        // {duration: '5m', target: 55},
-        // {duration: '5m', target: 60},
-        // {duration: '5m', target: 65},
-        // {duration: '5m', target: 70},
-        // {duration: '5m', target: 75},
-        // {duration: '5m', target: 80},
-        // {duration: '5m', target: 85},
-        // {duration: '5m', target: 90},
-        // {duration: '5m', target: 95},
+        {duration: '5m', target: 5},
+        {duration: '5m', target: 10},
+        {duration: '5m', target: 15},
+        {duration: '5m', target: 20},
+        {duration: '5m', target: 25},
+        {duration: '5m', target: 30},
+        {duration: '5m', target: 35},
+        {duration: '5m', target: 40},
+        {duration: '5m', target: 45},
+        {duration: '5m', target: 50},
+        {duration: '5m', target: 55},
+        {duration: '5m', target: 60},
+        {duration: '5m', target: 65},
+        {duration: '5m', target: 70},
+        {duration: '5m', target: 75},
+        {duration: '5m', target: 80},
+        {duration: '5m', target: 85},
+        {duration: '5m', target: 90},
+        {duration: '5m', target: 95},
         {duration: '5m', target: 100},
         {duration: '5m', target: 105},
         {duration: '5m', target: 110},
@@ -176,13 +176,11 @@ export default function () {
         const json= response.json();
         const success = !!json.data.createProduct.success
         if (success === false) {
-            console.log(response.status)
             failResponse.add(true);
         } else {
             failResponse.add(false);
         }
     } else {
-        console.log(response.status)
         failResponse.add(true);
     }
 }
@@ -198,11 +196,3 @@ export function handleSummary(data) {
         [html]: htmlReport(data)
     }
 }
-//Установка k6
-// sudo snap install k6
-// Запуск тестов
-// k6 run ./s3-stress-test-mutation.js
-// k6 run --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
-//Запуск теста с более детальной выгрузкой по каждой итерации
-// k6 run --out csv=./csv/detail-test-result.csv --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js
-// k6 run --out json=./json/detail-test-result.json --summary-trend-stats "min,avg,med,max,p(90),p(95),p(99)" ./s3-stress-test-mutation.js

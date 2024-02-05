@@ -121,11 +121,7 @@ export default function () {
     if (response.status === 200) {
         const json = response.json();
         const hasEdgesKey = !!json.data.getProductListing.edges;
-        if (!hasEdgesKey) {
-            failResponse.add(true)
-        } else {
-            failResponse.add(false)
-        }
+        failResponse.add(!hasEdgesKey)
     } else {
         failResponse.add(true)
     }

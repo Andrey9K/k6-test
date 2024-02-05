@@ -101,7 +101,7 @@ export default function () {
     input: {
       name: "stress_test_${randomString}"
       guid1C: "${randomString}"
-      code1C: "stress_test_${randomString}"
+      code1C: "${randomString}"
       codeWMS: "${randomString}"
       codeSupplier: "${randomString}"
       codeManufacturer: "${randomString}"
@@ -175,11 +175,7 @@ export default function () {
     if (response.status === 200) {
         const json= response.json();
         const success = !!json.data.createProduct.success
-        if (success === false) {
-            failResponse.add(true);
-        } else {
-            failResponse.add(false);
-        }
+        failResponse.add(!success)
     } else {
         failResponse.add(true);
     }

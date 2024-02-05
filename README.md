@@ -3,9 +3,11 @@
 </p>
 
 
-## Установка k6
-    sudo snap install k6
-### Установка доп. выгрузки html
+## <a href="https://k6.io/docs/get-started/installation/">Установка k6</a>
+
+    sudo snap install k6    
+### <a href="https://www.npmjs.com/package/k6-html-reporter?activeTab=readme">Установка доп. выгрузки html</a>
+    
     npm install k6-html-reporter --save-dev
 Выгрузка html  не поддерживает p(99).
 ## Запуск тестов
